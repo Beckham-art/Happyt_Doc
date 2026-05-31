@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>¡Feliz Cumpleaños, Dr. Romel! ✦ Tarjeta Digital</title>
+  
+  <!-- Enlace a estilos personalizados -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Lienzo para la animación de confeti en Canvas de alto rendimiento -->
+  <canvas id="confetti-canvas"></canvas>
+
+  <div class="app-container">
+    
+    <!-- ==========================================
+         VISTA 1: BIENVENIDA (Sobre Digital)
+         ========================================== -->
+    <div id="welcome-screen" class="envelope-wrapper">
+      <main class="envelope" role="main">
+        <header class="envelope-header">
+          <p class="envelope-subtitle">Una felicitación muy especial para...</p>
+          <h1 class="envelope-title serif-title">
+            <span class="gold-text">Dr. Romel</span>
+          </h1>
+        </header>
+        
+        <!-- Retrato central del Dr. Romel -->
+        <div class="emblem-container" aria-hidden="true">
+          <img src="dr_romel.png" alt="Foto del Dr. Romel" class="emblem-image">
+        </div>
+        
+        <footer class="envelope-footer">
+          <button id="btn-surprise" class="btn-primary" aria-label="Ver mensaje de felicitación sorpresa">
+            VER SORPRESA
+          </button>
+        </footer>
+      </main>
+    </div>
+
+    <!-- ==========================================
+         VISTA 2: TARJETA PRINCIPAL REVELADA
+         ========================================== -->
+    <div id="main-card" class="card-wrapper">
+      <article class="birthday-card" role="article">
+        
+        <!-- Encabezado de la Tarjeta -->
+        <header class="card-header">
+          <p class="card-subtitle">¡Feliz Cumpleaños!</p>
+          <h1 class="card-title serif-title">
+            <span class="gold-text">Dr. Romel</span>
+          </h1>
+          <div class="divider" aria-hidden="true"></div>
+        </header>
+
+        <!-- Cuadrícula Principal (Mensaje + Sentencia) -->
+        <div class="card-grid">
+          
+          <!-- Panel Izquierdo: Mensaje de Felicitación -->
+          <section class="message-panel" aria-label="Mensaje de felicitación">
+            <p class="message-paragraph">
+              Estimado <strong>Dr. Romel</strong>, en este día tan especial celebramos no solo un año más de vida, sino también su extraordinaria vocación, agudo intelecto y el compromiso inquebrantable con la justicia, la equidad y la defensa del derecho.
+            </p>
+            <p class="message-paragraph">
+              Su trayectoria profesional no solo defiende causas justas con elocuencia, sino que también aporta sabiduría y orden a nuestra sociedad. Es un verdadero privilegio poder expresarle nuestra más profunda admiración por el jurista brillante y la persona excepcional que es.
+            </p>
+            <p class="message-paragraph">
+              Deseamos que este nuevo año le traiga salud inquebrantable, nuevos triunfos jurídicos y momentos de inmensa felicidad en compañía de sus seres queridos. ¡Que el éxito y la paz sigan dictando el curso de su vida hoy y siempre!
+            </p>
+            
+            <div class="signature-container">
+              <span class="signature-label">Con profunda admiración y aprecio,</span>
+              <p class="signature-name">Sus Colegas, Clientes y Amigos</p>
+            </div>
+          </section>
+
+          <!-- Panel Derecho: Sentencia de la Felicidad (Leyes) -->
+          <section class="rx-panel" aria-label="Sentencia Solemne de la Felicidad">
+            <div class="rx-card">
+              
+              <div class="rx-header">
+                <span class="rx-logo" aria-hidden="true">§</span>
+                <div class="rx-meta">
+                  <p><strong>Tribunal:</strong> Supremo de la Vida</p>
+                  <p><strong>Causa:</strong> Cumpleaños Excelente</p>
+                  <p><strong>Acusado:</strong> Dr. Romel</p>
+                </div>
+              </div>
+              
+              <div class="rx-body">
+                <p class="rx-instruction">Se dicta sentencia condenatoria firme con las siguientes penas:</p>
+                
+                <!-- Art. 1: Felicidad -->
+                <div class="dose-item">
+                  <div class="dose-info">
+                    <span class="dose-icon" aria-hidden="true">⚖️</span>
+                    <div class="dose-details">
+                      <span class="dose-name">Art. 1: Felicidad Absoluta</span>
+                      <span class="dose-qty">Pena: Disfrutar sin recurso ni apelación</span>
+                    </div>
+                  </div>
+                  <button class="btn-dose" data-dose="happiness" aria-label="Ejecutar sentencia de Felicidad">Ejecutar</button>
+                </div>
+                
+                <!-- Art. 2: Salud -->
+                <div class="dose-item">
+                  <div class="dose-info">
+                    <span class="dose-icon" aria-hidden="true">🏛️</span>
+                    <div class="dose-details">
+                      <span class="dose-name">Art. 2: Salud Inquebrantable</span>
+                      <span class="dose-qty">Pena: Vitalidad y vigor en toda instancia</span>
+                    </div>
+                  </div>
+                  <button class="btn-dose" data-dose="health" aria-label="Ejecutar sentencia de Salud">Ejecutar</button>
+                </div>
+                
+                <!-- Art. 3: Descanso -->
+                <div class="dose-item">
+                  <div class="dose-info">
+                    <span class="dose-icon" aria-hidden="true">📜</span>
+                    <div class="dose-details">
+                      <span class="dose-name">Art. 3: Descanso Obligatorio</span>
+                      <span class="dose-qty">Pena: Prisión domiciliaria en relax absoluto</span>
+                    </div>
+                  </div>
+                  <button class="btn-dose" data-dose="rest" aria-label="Ejecutar sentencia de Descanso">Ejecutar</button>
+                </div>
+                
+                <!-- Art. 4: Diversión -->
+                <div class="dose-item">
+                  <div class="dose-info">
+                    <span class="dose-icon" aria-hidden="true">🎉</span>
+                    <div class="dose-details">
+                      <span class="dose-name">Art. 4: Festejo e Integración</span>
+                      <span class="dose-qty">Pena: 1 rebanada de diversión con pastel</span>
+                    </div>
+                  </div>
+                  <button class="btn-dose" data-dose="fun" aria-label="Ejecutar sentencia de Festejo">Ejecutar</button>
+                </div>
+                
+              </div>
+              
+              <div class="rx-footer">
+                <span class="rx-signature-title">Firma del Juez del Destino:</span>
+                <div class="rx-signature-block">
+                  <span class="rx-signature-line">La Justicia Divina</span>
+                </div>
+              </div>
+              
+            </div>
+          </section>
+          
+        </div>
+
+        <!-- Botones de Acción de la Tarjeta -->
+        <footer class="card-actions">
+          <button id="btn-more-confetti" class="btn-primary" aria-label="Lanzar más fuegos artificiales de confeti">
+            💥 ¡LANZAR CONFETI!
+          </button>
+          <button id="btn-signatures" class="btn-primary" aria-label="Ver dedicatoria de honor">
+            📜 VER DEDICATORIA
+          </button>
+          <button id="btn-back" class="btn-secondary" aria-label="Volver a la pantalla de portada">
+            Volver
+          </button>
+        </footer>
+        
+      </article>
+    </div>
+
+    <!-- ==========================================
+         VISTA 3: DEDICATORIA Y REMITENTES (Nueva pantalla)
+         ========================================== -->
+    <div id="signatures-screen" class="card-wrapper">
+      <article class="birthday-card" role="article">
+        
+        <header class="card-header">
+          <p class="card-subtitle">Dedicatoria de Honor</p>
+          <h1 class="card-title serif-title">
+            <span class="gold-text">Reconocimiento Especial</span>
+          </h1>
+          <div class="divider" aria-hidden="true"></div>
+        </header>
+
+        <div class="dedication-content" style="text-align: center; max-width: 650px; margin: 0 auto; display: flex; flex-direction: column; align-items: center; gap: 25px;">
+          
+          <!-- Sello oficial de la Academia -->
+          <div class="seal-container" aria-hidden="true">
+            <div class="seal-ring">🏆</div>
+          </div>
+          
+          <p class="message-paragraph" style="font-size: 1.15rem; line-height: 1.9; text-align: center; font-style: italic; color: var(--text-primary);">
+            "Agradecemos profundamente su dedicación constante, su guía y su visión de excelencia. Es un verdadero privilegio caminar de su mano profesional y ser inspirados diariamente por su compromiso y rectitud jurídica."
+          </p>
+
+          <p class="signature-label" style="font-family: var(--font-accent); font-size: 2.2rem; color: var(--gold-secondary); margin-top: 10px; margin-bottom: -5px; text-shadow: 0 2px 4px rgba(0,0,0,0.3);">
+            Atentamente,
+          </p>
+          
+          <!-- Cuadrícula de Firmas -->
+          <div class="signatures-grid">
+            <div class="signature-item">
+              <div class="avatar-container">
+                <img src="beckham.png" alt="Beckham" class="avatar-image">
+              </div>
+              <p class="signature-handwritten">Beckham</p>
+              <div class="signature-line"></div>
+              <p class="signature-title">EL TUTOR MÁS FIEL</p>
+            </div>
+            <div class="signature-item">
+              <div class="avatar-container">
+                <img src="marvic.png" alt="Marvic" class="avatar-image">
+              </div>
+              <p class="signature-handwritten">Marvic</p>
+              <div class="signature-line"></div>
+              <p class="signature-title">LA COORDINADORA MÁS CHAMBEADORA</p>
+            </div>
+          </div>
+
+          <div style="margin-top: 30px; text-align: center;">
+            <p style="font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; color: var(--text-secondary); margin-bottom: 5px;">Tus más fieles trabajadores de la</p>
+            <p class="serif-title gold-text" style="font-size: 1.8rem; font-weight: 700; letter-spacing: 1px;">ACADEMIA ALBA PERÚ</p>
+          </div>
+        </div>
+
+        <footer class="card-actions" style="margin-top: 40px;">
+          <button id="btn-back-to-card" class="btn-secondary" aria-label="Volver a la tarjeta principal">
+            📯 Volver a la Tarjeta
+          </button>
+        </footer>
+        
+      </article>
+    </div>
+
+  </div>
+
+  <!-- Enlace al archivo de lógica interactiva -->
+  <script src="script.js"></script>
+</body>
+</html>
